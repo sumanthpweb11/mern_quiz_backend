@@ -48,7 +48,9 @@ export const getAllExams = async (req, res) => {
 // get exam by id
 export const getExamById = async (req, res) => {
   try {
-    const exam = await examModal.findById(req.body.examId);
+    const exam = await examModal
+      .findById(req.body.examId)
+      .populate("questions");
     res.send({
       message: "Exam fecthed successfully",
       data: exam,

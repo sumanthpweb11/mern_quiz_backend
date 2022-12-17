@@ -30,9 +30,11 @@ app.use(
 // Route Imports
 import userRoutes from "./routes/userRoute.js";
 import examRoutes from "./routes/examsRoute.js";
+import reportRoutes from "./routes/reportsRoute.js";
 
 app.use("/api/users", userRoutes);
 app.use("/api/exams", examRoutes);
+app.use("/api/reports", reportRoutes);
 
 // app.get("/", (req, res) =>
 //   res.send(

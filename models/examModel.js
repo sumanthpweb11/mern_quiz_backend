@@ -24,7 +24,7 @@ const examSchema = new mongoose.Schema(
     },
     questions: {
       type: [mongoose.Schema.Types.ObjectId],
-      ref: "question",
+      ref: "questions",
       required: true,
     },
   },
@@ -33,5 +33,5 @@ const examSchema = new mongoose.Schema(
   }
 );
 
-const examModal = mongoose.model("exam", examSchema);
+const examModal = mongoose.model("exams", examSchema);
 export default examModal;
