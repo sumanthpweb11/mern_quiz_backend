@@ -1,4 +1,3 @@
-import UserModel from "../models/userModal.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import userModel from "../models/userModal.js";
@@ -7,7 +6,7 @@ import userModel from "../models/userModal.js";
 export const register = async (req, res) => {
   try {
     // check if user already exists
-    const userExists = await UserModel.findOne({ email: req.body.email });
+    const userExists = await userModel.findOne({ email: req.body.email });
 
     if (userExists) {
       return res
@@ -21,7 +20,7 @@ export const register = async (req, res) => {
     req.body.password = hashedpassword;
 
     // create new user
-    const newUser = new UserModel(req.body);
+    const newUser = new userModel(req.body);
     await newUser.save();
     res.send({
       message: "User created successfully",
@@ -80,7 +79,7 @@ export const login = async (req, res) => {
 
 export const getUserInformation = async (req, res) => {
   try {
-    const user = await UserModel.findById(req.body.userId);
+    const user = await userModel.findById(req.body.userId);
     res.send({
       message: "User Info fetched successfully",
       success: true,

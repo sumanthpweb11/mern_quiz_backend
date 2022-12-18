@@ -43,16 +43,13 @@ export const getAllReports = async (req, res) => {
 
     const reports = await reportModal
       .find({
-        exam: {
-          $in: matchedExamIds,
-        },
-        user: {
-          $in: matchedUserIds,
-        },
+        exam: { $in: matchedExamIds },
+        user: { $in: matchedUserIds },
       })
       .populate("exam")
       .populate("user")
       .sort({ createdAt: -1 });
+
     res.send({
       message: "Attempts fetched successfully",
       data: reports,
