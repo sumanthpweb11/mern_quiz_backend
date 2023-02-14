@@ -21,21 +21,21 @@ app.use(
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://mern-quiz-1hkq.onrender.com"],
-    credentials: true,
+    origin: ["http://localhost:3000", "https://mern-quiz-app.onrender.com"],
+    // credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
 
-app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, PATCH, DELETE"
-  );
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  next();
-});
+// app.use((req, res, next) => {
+//   res.setHeader("Access-Control-Allow-Origin", "*");
+//   res.setHeader(
+//     "Access-Control-Allow-Methods",
+//     "GET, POST, PUT, PATCH, DELETE"
+//   );
+//   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+//   next();
+// });
 
 // Route Imports
 import userRoutes from "./routes/userRoute.js";
