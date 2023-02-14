@@ -36,11 +36,11 @@ app.use("/api/users", userRoutes);
 app.use("/api/exams", examRoutes);
 app.use("/api/reports", reportRoutes);
 
-// app.get("/", (req, res) =>
-//   res.send(
-//     `<h1>Server is working click <a href=${process.env.FRONTEND_URL}>here</a></h1>`
-//   )
-// );
+app.get("/", (req, res) =>
+  res.send(
+    `<h1>Server is working click <a href=${process.env.FRONTEND_URL}>here</a></h1>`
+  )
+);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT} `);
