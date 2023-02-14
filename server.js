@@ -21,7 +21,11 @@ app.use(
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://mern-quiz-app.onrender.com"],
+    origin: [
+      "http://localhost:3000",
+      "https://mern-quiz-app.onrender.com",
+      "https://mern-quiz-app-api.onrender.com",
+    ],
     // credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
